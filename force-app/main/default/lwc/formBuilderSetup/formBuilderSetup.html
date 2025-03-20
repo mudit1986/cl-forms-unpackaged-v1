@@ -46,7 +46,19 @@
                     <h3 class="slds-section__title slds-theme_shade">
                         <span class="slds-truncate slds-p-horizontal_small" title="Select Details">Select Details</span>
                     </h3>
-                    <div class="slds-section__content"></div>
+                    <div class="slds-section__content">
+                        <!--OBJECT PICKLIST START-->
+                        <c-searchable-combobox data-id="objpck" field-label="Select Object" options={avilableObjectList} value={selectedObjectName} onchange={handleOnChangePicklist}></c-searchable-combobox>
+                        <!--OBJECT PICKLIST END-->
+                        <!--RECORD TYPE PICKLIST START-->
+                        <template if:true={isRecordTypeRequired}>
+                            <c-searchable-combobox data-id="rectypepck" field-label="Select Record Type" options={avilableRecordTypeList} value={selectedRecordType} onchange={handleOnChangePicklist}></c-searchable-combobox>
+                        </template>
+                        <!--RECORD TYPE PICKLIST END-->
+                        <!--LAYOUT PICKLIST START-->
+                        <!--<c-generic-combobox label="Select Layout" data-id="layoutpck" placeholder="Select Layout" options={avilableLayoutList} onselect={handleGenericComboboxChange} class="slds-m-bottom_xx-small"></c-generic-combobox>-->
+                        <!--LAYOUT PICKLIST END-->
+                    </div>
                 </div>
                 <!--***************************--OBJECT SETTING--***************************-->
                 <!--***************************--FIELDS SETTING--***************************-->
